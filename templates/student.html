@@ -301,7 +301,7 @@
       detailsDiv.innerHTML = "";
 
       try {
-        const res = await fetch(`${API_BASE}/students/${id}`);
+        const res = await fetch(`${API_BASE}/${id}`);
         if (!res.ok) throw new Error("Student not found.");
         const student = await res.json();
 
@@ -333,7 +333,7 @@
       allStudentsDiv.innerHTML = "";
 
       try {
-        const res = await fetch(`${API_BASE}/students`);
+        const res = await fetch(`${API_BASE}`);
         const students = await res.json();
 
         const rows = students.map(student => `
@@ -405,7 +405,7 @@
     async function deleteStudent(id) {
       if (!confirm("Are you sure?")) return;
       try {
-        const res = await fetch(`${API_BASE}/students/${id}`, { method: "DELETE" });
+        const res = await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
         if (!res.ok) throw new Error("Delete failed.");
         showAllStudents();
         document.getElementById("studentDetails").style.display = "none";
