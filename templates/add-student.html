@@ -219,7 +219,7 @@
   </div>
 
   <script>
-    const API_BASE = "http://localhost:5000"; // Update if deployed
+    const API_BASE = "https://datahubprod-production.up.railway.app/students"; // Update if deployed
 
     // Handle Add Student Form Submission
     // <script>
@@ -236,7 +236,7 @@
     };
 
     try {
-      const res = await fetch("http://localhost:5000/students", {
+      const res = await fetch("https://datahubprod-production.up.railway.app/students", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(studentData),
