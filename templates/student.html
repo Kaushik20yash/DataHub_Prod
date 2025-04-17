@@ -364,7 +364,7 @@
     }
 
     async function editStudent(id) {
-      const res = await fetch(`${API_BASE}/students/${id}`);
+      const res = await fetch(`${API_BASE}/${id}`);
       const student = await res.json();
       editingStudentId = id;
 
@@ -387,7 +387,7 @@
       };
 
       try {
-        const res = await fetch(`${API_BASE}/students/${editingStudentId}`, {
+        const res = await fetch(`${API_BASE}/${editingStudentId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
