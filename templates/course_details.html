@@ -9,7 +9,7 @@
 <body>
   <div class="sidebar">
     <h2>Navigation</h2>
-    <a class="nav-link" href="dashboard.html">Dashboard</a>
+    <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
     <a class="nav-link" href="{{ url_for('student_get') }}">Student Details</a>
     <a class="nav-link" href="{{ url_for('faculty_details') }}">Faculty Details</a>
 <a class="nav-link" href="{{ url_for('department') }}">Department Details</a>
