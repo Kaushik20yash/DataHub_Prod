@@ -7,71 +7,20 @@ from mysql.connector import Error
 app = Flask(__name__)
 CORS(app)
 
-# try:
-#     conn = mysql.connector.connect(
-#         host='localhost',
-#         user='root',
-#         password=,
-#         database='DataHub'
-#     )
-#     cursor = conn.cursor(dictionary=True)
-# except mysql.connector.Error as err:
-#     print(f"Error: {err}")
-#     exit(1)  # Exit if connection fails
-
-# db_config = {
-#     'host': 'localhost',
-#     'user': 'root',
-#     'password': 
-#     'database': 'DataHub'
-# }
-
+#db_config host, username, password and all have been removed by us. 
 db_config = {
-    'host': 'ballast.proxy.rlwy.net',
-    'user': 'root',
-    'password': 'yXApwdYUtOVSHIokYyEfUZzaLnsvAEXo',
-    'database': 'railway',
-    'port': 42563
+    'host': '',
+    'user': '',
+    'password': '',
+    'database': '',
+    'port': 
 }
 
-# def get_db_connection():
-#     return mysql.connector.connect(**db_config)
-
-# def get_connection():
-#     return mysql.connector.connect(
-#         host='localhost',
-#         user='root',
-        
-#         database='DataHub'
-#     )
-
-# def get_data():
-#     conn = mysql.connector.connect(
-#         host='localhost',
-#         user='root',
-      
-#         database='DataHub'
-#     )
-#     cursor = conn.cursor(dictionary=True)
-
-    # cursor.execute("SELECT * FROM departments")
-    # departments = cursor.fetchall()
-
-    # # Get all course details for each department
-    # for dept in departments:
-    #     cursor.execute("SELECT CourseNo, Title, Year, Did FROM courses WHERE Did = %s", (dept['Did'],))
-    #     dept['courses'] = cursor.fetchall()
-
-    # cursor.close()
-    # conn.close()
-    # return departments
 try:
     conn = mysql.connector.connect(**db_config)
     cursor = conn.cursor(dictionary=True)
 except mysql.connector.Error as err:
     print(f"Error: {err}")
-    # Don't exit in production, just log the error
-    # exit(1)  # Remove this line for production
 
 def get_db_connection():
     return mysql.connector.connect(**db_config)
